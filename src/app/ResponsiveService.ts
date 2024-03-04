@@ -1,27 +1,24 @@
 
 import { Injectable } from '@angular/core';
-import { fromEvent, Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ResponsiveService {
+  private isMobile = false;
 
-  private resizeObservable: Observable<Event>;
-  private currentWidth: number=0;
-
-  constructor() {
-    this.resizeObservable = fromEvent(window, 'resize');
-    this.resizeObservable.pipe(
-      map(() => window.innerWidth)
-    ).subscribe(width => {
-      this.currentWidth = width;
+  constructor(private breakpointObserver: BreakpointObserver) {
+    this.breakpointObserver.observe([Breakpoints.HandsetPortrait]).subscribe(result => {
+      this.isMobile = result.matches;
     });
   }
 
-  isMobile(): boolean {
-    return this.currentWidth <= 768;
+  public isMobileDevice(): Observable<boolean> {
+    return new Observable<boolean>(observer => {
+      observer.next(this.isMobile);
+      return { unsubscribe() {} };
+    });
   }
-
 }

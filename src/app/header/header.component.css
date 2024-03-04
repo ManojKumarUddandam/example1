@@ -160,4 +160,15 @@ body.dark-mode header {
 body.dark-mode header a:hover {
   background-color: #45a049;
 }
+.hamburger{
+  margin-left: 40px;
+}
+@media only screen and (max-width: 767px) {
+
+  .container b{
+    font-size: large;
+  }
+  
+}
+
 

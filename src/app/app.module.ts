@@ -14,6 +14,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ResponsiveService } from './ResponsiveService';
 import { DarkModeComponent } from './dark-mode/dark-mode.component';
+import { ResponsiveDirective } from './directives/responsive.directive';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { DarkModeComponent } from './dark-mode/dark-mode.component';
     ProjectComponent,
     ProjectsComponent,
     DarkModeComponent,
+    ResponsiveDirective,
    
   ],
   imports: [
