@@ -1,0 +1,14 @@
+<header [ngClass]="{ 'dark-mode': isDarkMode, 'mobile': isMobile }">
+  <div class="container">
+    <a class="name" routerLink="/home"><span><b>Manoj Kumar</b></span></a>
+  </div>
+  <div class="intro" [ngClass]="{ 'mobile-intro': isMobile }">
+    <ul>
+      <li><button class="button"><a routerLink="/home" routerLinkActive="active">Home</a></button></li>
+      <li><button class="button"><a routerLink="/about" routerLinkActive="active">About</a></button></li>
+      <li><button class="button"><a routerLink="/projects" routerLinkActive="active">Projects</a></button></li>
+      <li><button class="button"><a routerLink="/contact" routerLinkActive="active">Contact</a></button></li>
+      <app-dark-mode (darkModeChange)="onDarkModeChange($event)"></app-dark-mode>
+    </ul>
+  </div>
+</header>

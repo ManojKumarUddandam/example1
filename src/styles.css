@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+/* styles.css */
+/*body {
+  background-color: #fff;
+  color: #000;
+}*/
+
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+body.light-mode {
+  background-color: #fff;
+  color: #000;
+}

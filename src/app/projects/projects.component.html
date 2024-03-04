@@ -1,0 +1,8 @@
+<app-header></app-header>
+<div class="products">
+    <div class="product" *ngFor="let p of projects">
+        <a routerLink="/project/{{p.id}}" target="_blank">{{p.title}}</a>
+    </div>
+
+</div>
+<app-foot></app-foot>
