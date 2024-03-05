@@ -1,14 +1,29 @@
-<header [ngClass]="{ 'dark-mode': isDarkMode, 'mobile': isMobile }" responsive>
-  <div class="container">
-    <a class="name" routerLink="/home"><span><b>Manoj Kumar</b></span></a>
-  </div>
-  <div class="intro" [ngClass]="{ 'mobile-intro': isMobile }">
-    <ul>
-      <li><button class="button"><a routerLink="/home" routerLinkActive="active">Home</a></button></li>
-      <li><button class="button"><a routerLink="/about" routerLinkActive="active">About</a></button></li>
-      <li><button class="button"><a routerLink="/projects" routerLinkActive="active">Projects</a></button></li>
-      <li><button class="button"><a routerLink="/contact" routerLinkActive="active">Contact</a></button></li>
-      <app-dark-mode (darkModeChange)="onDarkModeChange($event)"></app-dark-mode>
-    </ul>
-  </div>
-</header>
+<header [ngClass]="{ 'dark-mode': isDarkMode, 'mobile': isMobile }" responsive> 
+  <div class="container"> 
+    <a class="name" routerLink="/home"><span><b>Manoj</b></span></a> 
+  </div> 
+  <button class="hamburger-menu" (click)="toggleMenu()"> 
+    <svg class="hb" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10" stroke="#eee" stroke-width=".6" fill="rgba(0,0,0,0)" stroke-linecap="round" style="cursor: pointer">
+      <path d="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7">
+        <animate dur="0.2s" attributeName="d" values="M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7;M3,3L5,5L7,3M5,5L5,5M3,7L5,5L7,7" fill="freeze" begin="start.begin" />
+        <animate dur="0.2s" attributeName="d" values="M3,3L5,5L7,3M5,5L5,5M3,7L5,5L7,7;M2,3L5,3L8,3M2,5L8,5M2,7L5,7L8,7" fill="freeze" begin="reverse.begin" />
+      </path>
+      <rect width="10" height="10" stroke="none">
+        <animate dur="2s" id="reverse" attributeName="width" begin="click" />
+      </rect>
+      <rect width="10" height="10" stroke="none">
+        <animate dur="0.001s" id="start" attributeName="width" values="10;0" fill="freeze" begin="click" />
+        <animate dur="0.001s" attributeName="width" values="0;10" fill="freeze" begin="reverse.begin" />
+      </rect>
+    </svg>
+  </button> 
+  <div class="intro" [ngClass]="{ 'menu-open': isMenuOpen }"> 
+    <ul> 
+      <li><button class="button"><a routerLink="/home" routerLinkActive="active">Home</a></button>
+      </li> <li><button class="button"><a routerLink="/about" routerLinkActive="active">About</a></button>
+      </li> <li><button class="button"><a routerLink="/projects" routerLinkActive="active">Projects</a></button>
+      </li> <li><button class="button"><a routerLink="/contact" routerLinkActive="active">Contact</a></button></li>
+       <app-dark-mode (darkModeChange)="onDarkModeChange($event)"></app-dark-mode> 
+      </ul> 
+    </div> 
+  </header>

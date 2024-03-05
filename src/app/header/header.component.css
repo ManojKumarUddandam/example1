@@ -160,15 +160,152 @@ body.dark-mode header {
 body.dark-mode header a:hover {
   background-color: #45a049;
 }
-.hamburger{
-  margin-left: 40px;
+.hamburger-menu {
+  display: none; /* Hide hamburger icon by default */
+  cursor: pointer;
 }
 @media only screen and (max-width: 767px) {
-
-  .container b{
-    font-size: large;
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  html, body {
+    background: black;
   }
   
+  .hb {
+    background-color: black;
+    width: 50px;
+    margin: 0 auto;
+    display: block;
+  }
+  .container a {
+    padding-left: 0; /* Adjust padding as needed */
+  }
+
+  .container a span {
+    text-align: left; /* Align span content to the left */
+  }
+  /* Add styles for the active state of the menu */
+  .hamburger-menu.active + .menu-open {
+    visibility: visible;
+    opacity: 1;
+  }
+  .hamburger-menu {
+    display: block; /* Display the hamburger icon on mobile */
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  /* Hide menu links by default */
+  .intro {
+    display: none;
+    position: absolute;
+    top: 60px; /* Adjust this value based on your header height */
+    right: 0;
+    width: 50%;
+    height: 30%;
+    border-radius: 20px;
+    background-color:black;
+    z-index: 1;
+    transition: all 0.5s ease-out;
+    opacity: 90%;
+  }
+  /* Display menu links when menu is open */
+  .menu-open.intro {
+    display: block; /* Display menu links when menu is open */
+  }
+
+  .intro ul {
+    padding-top: 2px;
+    padding: 10px;
+    list-style-type: none;
+    display: flex;
+  flex-direction: column; /* Display menu links in a column */
+  }
+
+  .intro li {
+    margin-bottom: 5px;
+  }
+
+  .intro li a {
+    text-decoration: none;
+    color: white;
+  }
+
+.button {
+  position: relative;
+  width: 80px;
+  height: 30px;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  border: none;
+  padding: 2px;
+  gap: 2px;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
+.button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  left: -2px;
+  top: -1px;
+  margin: auto;
+  width: 70px;
+  height: 34px;
+  border-radius: 6px;
+  background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100% );
+  z-index: -10;
+  pointer-events: none;
+  transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.button::after {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100% );
+  transform: translate3d(0, 0, 0) scale(0.95);
+  filter: blur(20px);
+}
+
+.button:hover::after {
+  filter: blur(30px);
+}
+
+.button:hover::before {
+  transform: rotate(-180deg);
+}
+
+.button:active::before {
+  scale: 0.7;
+}
+/* Dark mode specific styles */
+body.dark-mode {
+  --header-text-color: #fff; /* Change header text color */
+  --header-link-color: #fff; /* Change header link color */
+  --header-span-color: white; /* Change header span color */
+}
+
+body.dark-mode header {
+  background-color: #000;
+}
+
+body.dark-mode header a:hover {
+  background-color: #45a049;
+}
+.dark-mode .button{
+  align-items: flex-start;
+}
+
+}
+/* Existing CSS code */
 

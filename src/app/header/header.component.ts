@@ -13,10 +13,10 @@ export class HeaderComponent {
 
   constructor(private responsiveService: ResponsiveService) {
     this.responsiveService.isMobileDevice().subscribe((isMobile: boolean) => {
-      this.isMobile = isMobile;
+      this.isMobile = window.innerWidth<768;
     });
   }
-
+ 
   // Function to toggle the menu state
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;
@@ -25,4 +25,8 @@ export class HeaderComponent {
   onDarkModeChange(isDarkMode: boolean): void {
     this.isDarkMode = isDarkMode;
   }
+  closeMenu() :void{
+    this.isMenuOpen = false; // Close the menu when a link is clicked
+  }
+
 }
