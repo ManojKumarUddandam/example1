@@ -1,8 +1,11 @@
-/* styles.css or component-specific CSS file */
-/* styles.css or component-specific CSS file */
-/* styles.css or component-specific CSS file */
+/* General Styles */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
-
+/* Container Styles */
 .portfolio-container {
   position: relative;
   height: 100vh;
@@ -25,13 +28,13 @@
 
 .intro {
   position: absolute;
-  margin-bottom: 500px;
-  top: 500px;
-  left: 10%; /* Adjust the left position as needed */
+  top: 50%;
+  left: 10%;
   transform: translateY(-50%);
   z-index: 2;
 }
 
+/* Header Styles */
 header {
   background-color: whitesmoke;
   color: black;
@@ -53,25 +56,19 @@ ul {
   gap: 25px;
   padding: 0;
   margin-top: 35px;
+  list-style-type: none;
 }
 
-li:hover{
-  filter: blur(0); /* Remove blur on hover */
-  brightness:(1.2); /* Increase brightness on hover */
-}
 li {
-  list-style-type: none;
   position: relative;
-  filter: blur(0.8px); /* Initial blur */
-  transition: filter 0.3s ease; /* Transition filter property */
+  transition: filter 0.3s ease;
 }
-li a {
-  font-size: 14px; /* decrease the font size */
-  color: #fff;
-  text-decoration: none;
-  padding: 8px 16px;
-  display: block;
+
+li:hover {
+  filter: blur(0);
+  brightness: 1.2;
 }
+
 li::before {
   content: "";
   position: absolute;
@@ -80,92 +77,88 @@ li::before {
   width: 0;
   height: 2px;
   background: linear-gradient(90deg, transparent 50%, rgba(97,255,175,1) 50%);
-  transition: width 1s ease; /* Transition width over 0.3 seconds with ease timing function */
+  transition: width 1s ease;
 }
 
 li:hover::before {
-  width: 60%; /* Underline half of the li element */
+  width: 60%;
 }
 
+li a {
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 16px;
+  display: block;
+}
+
+/* Link Styles */
 a {
   text-decoration: none;
   color: blue;
 }
+
 .intro a {
-  font-size: 20px; /* Increase the font size as needed */
+  font-size: 20px;
   text-decoration: none;
   color: black;
 }
-.intro a span {
-  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 60px; /* Increase the font size of the span */
-  text-decoration-line: none;
-  color: rgb(182, 214, 130);
-}
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
 
-span.name {
+.intro a span, span.name {
   font-size: 60px;
   text-decoration-line: none;
   color: rgb(182, 214, 130);
 }
-span{
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+span {
   font-weight: 400;
   font-size: larger;
 }
-h2{
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+h2 {
   font-weight: 200;
   color: rgb(42, 65, 5);
   font-size: x-large;
 }
-.intro {
-  position: relative;
-  top: 50%;
-  left: 10%; /* Adjust the left position as needed */
-  transform: translateY(-50%,50%);
-  z-index: 2;
-}
+
+/* Social Media Container Styles */
 .social-media-container {
   position: absolute;
   top: 0;
   left: 0;
   width: 140px;
   height: 100%;
-  background:rgb(182, 214, 130);
+  background: rgb(182, 214, 130);
   color: white;
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: flex-start;
   visibility: hidden;
   opacity: 0.5;
   transition: visibility 0s, opacity 0.3s ease-in-out;
-  flex-direction: column;
-  justify-content: space-around; /* Vertically center the icons */
-  align-items: flex-start; 
-}
-.icon-name {
-  margin-left: 10px; /* Adjust the margin as needed */
-  font-size: 18px; /* Adjust the font size as needed */
-  color: black;
 }
 
 .social-media-container.active {
   visibility: visible;
-  opacity: 0.5;
+  opacity: 1;
 }
-.social-media-container a {
-  /*margin: 0 5px; /* Add some margin between the icons */
-  margin: 0 10px; /* Reduce the margin between the icons */
-  font-size: 18px; /* Adjust the font size as needed */
+
+.icon-name {
+  margin-left: 10px;
+  font-size: 18px;
   color: black;
-  transition: transform 0.3s ease-in-out; /* Add a smooth transition for the hover effect */
+}
+
+.social-media-container a {
+  margin: 0 10px;
+  font-size: 18px;
+  color: black;
+  transition: transform 0.3s ease-in-out;
   position: relative;
   display: inline-block;
 }
+
 .social-media-container a::before {
   content: "";
   position: absolute;
@@ -178,13 +171,16 @@ h2{
   transform: scale(0);
   transition: transform 0.3s ease-in-out;
 }
+
 .social-media-container a:hover::before {
-  transform: scale(1); /* Increase the size of the circle when hovering */
+  transform: scale(1);
 }
+
 .social-media-container a img {
-  width: 32px; /* Set a fixed width for the icons */
-  height: auto; /* Set a fixed height for the icons */
+  width: 32px;
+  height: auto;
 }
+
 .hamburger-menu {
   position: absolute;
   top: 15px;
@@ -208,67 +204,71 @@ h2{
 .hamburger-menu.active svg path {
   fill: white;
 }
+
 .hamburger-menu.active + .social-media-container {
   visibility: visible;
   opacity: 1;
 }
+
 .social-media-container a:hover {
-  transform: scale(1.2); /* Increase the size of the icon when hovering */
-  color: white; /* Change the text color to white */
+  transform: scale(1.2);
+  color: white;
 }
+
 .intro a.active {
   font-weight: bold;
 }
 
 .intro a.active::after {
-  content: ''; /* Add content for pseudo-element */
+  content: '';
   position: absolute;
-  bottom: 0; /* Position at the bottom of the link */
-  left: 0; /* Start from the left */
-  width: 50%; /* Set the width to cover half of the link */
-  height: 2px; /* Set the height for the underline */
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 2px;
   background: linear-gradient(90deg, transparent 50%, rgba(97,255,175,1) 50%);
-  transition: width 0.3s ease; /* Transition width over 0.3 seconds */
+  transition: width 0.3s ease;
 }
+
+/* Responsive Styles */
 @media only screen and (max-width: 767px) {
   .portfolio-container {
     flex-direction: column;
   }
+
   .intro a span {
     padding-left: 20px;
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 40px; /* Increase the font size of the span */
+    font-size: 40px;
     text-decoration-line: none;
     color: rgb(182, 214, 130);
   }
+
   .intro {
     position: relative;
     bottom: 30%;
-    left: 10%; /* Adjust the left position as needed */
-    transform: translateY(-50%,50%);
+    left: 10%;
+    transform: translateY(-50%, 50%);
     z-index: 2;
   }
-  h2{
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  h2 {
     font-weight: 100px;
     font-size: medium;
-   padding-left: 20px;
+    padding-left: 20px;
   }
+
   .intro a {
-    font-size: medium; /* Increase the font size as needed */
+    font-size: medium;
     text-decoration: none;
     color: black;
   }
+
   ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     gap: 10px;
-    padding: 0;
-    margin-top: 35px;
   }
+
   .intro {
-    top: 400px; /* Adjust this value to move the intro container down */
-  left: 5%; /* Adjust the left position as needed */
-   }
+    top: 400px;
+    left: 5%;
+  }
 }
