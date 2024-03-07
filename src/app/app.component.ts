@@ -1,6 +1,6 @@
 // app.component.ts
 import { Component } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, Event, NavigationStart,NavigationEnd,NavigationError } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +11,7 @@ export class AppComponent {
   title = 'portfolio';
   showHeader = false;
   showFooter = false;
-
+  showLoadingIndicator = true;
   constructor(private router: Router,) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
@@ -20,4 +20,16 @@ export class AppComponent {
       }
     });
  }
+ ngOnInit() {
+  this.router.events.subscribe((event: Event) => {
+    if (event instanceof NavigationStart) {
+      this.showLoadingIndicator = true;
+    } else if (
+      event instanceof NavigationEnd ||
+      event instanceof NavigationError
+    ) {
+      this.showLoadingIndicator = false;
+    }
+  });
+}
 }

@@ -33,7 +33,135 @@ body.dark-mode{
   margin-left: 50px;
   margin-bottom: 1px;
 }
+/* Add this CSS to your existing stylesheet */
+.container {
+  display: flex;
+  align-items: center;
+}
 
+.image {
+  flex: 0 0 auto; /* Prevent image from growing or shrinking */
+  margin-right: 70px; /* Adjust spacing between image and text */
+}
+
+.text {
+  flex: 1; /* Allow text to take up remaining space */
+  text-align:justify; /* Align text */
+}
+.text p {
+  margin-left:70px; /* Add margin to the right side of the text */
+  margin-right: 40px;
+  font-size: larger;
+}
+button {
+  padding: 1.3em 3em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+button:hover {
+  background-color: #23c483;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+button:active {
+  transform: translateY(-1px);
+}
+.resume-button{
+  margin-left: 60px;
+  margin-top: 20px;
+}
+.info {
+  margin-top: 40px;
+  margin-left:60px ;
+  display: grid;
+  grid-template-columns: auto auto; /* Two columns layout */
+  grid-gap: 10px; /* Add gap between items */
+}
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.tools{
+  margin-top: 50px;
+  margin-left: 90px;
+}
+.tools p{
+  margin-right: 30px;
+  margin-left: 70px;
+  margin-top: 30px;
+  font-size: large;
+}
+.images {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  margin-top: 40px;
+  margin-left: 200px;
+}
+.images img {
+  padding-bottom: 50px;
+  width: 20%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+.images img:hover{
+  transform: scale(1.8);
+}
+.services h1{
+  align-items: center;
+  justify-content: center;
+  padding-left: 700px;
+}
+
+.service-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+.webapplication, .webdevolopment {
+  width: 30%;
+  padding: 20px;
+  margin-top: 30px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.webapplication:hover{
+  transition: transform 0.3s ease;
+  transform: scale(1.1);
+}
+.webdevolopment:hover{
+  transition: transform 0.3s ease;
+  transform: scale(1.1);
+}
+.webapplication img{
+  width: 120px;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  padding-left: 150px;
+}
+.webdevolopment img{
+  width: 120px;
+  height: auto;
+  align-items: center;
+  justify-content: center;
+  padding-left: 150px;
+}
 @media only screen and (max-width: 767px) {
   .container img{
     width: 420px;
@@ -44,6 +172,7 @@ body.dark-mode{
   }
   .about h2{
     font-size: x-large;
+    color: blue;
     opacity: 20px;
     padding-top: 10px;
     padding-bottom: 0px;
@@ -62,5 +191,102 @@ body.dark-mode{
     margin: 0 auto;
     margin-left: 0px;
     margin-bottom: 1px;
+  }
+  .container {
+    display: grid;
+    align-items: center;
+  }
+  
+  .image {
+    flex: 0 0 auto; /* Prevent image from growing or shrinking */
+    margin-right: 70px; /* Adjust spacing between image and text */
+  }
+  
+  .text {
+    flex: 1; /* Allow text to take up remaining space */
+    text-align:justify; /* Align text */
+  }
+  .text p {
+    margin-left:10px; /* Add margin to the right side of the text */
+    margin-right: 20px;
+    font-size: x-large;
+    font-weight: 100;
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+  }
+  
+  .info-item {
+    display: flex;
+  }
+  
+  .info-item span:first-child {
+    margin-right: 5px;
+    font-weight: bold;
+  }
+  .tools{
+    margin-top: 50px;
+    margin-left: 20px;
+  }
+  .tools p{
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 30px;
+    align-items: justify;
+    font-size: larger;
+  }
+  .images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    margin-top: 40px;
+    margin-left: 80px;
+  }
+  .images img {
+    padding-bottom: 20px;
+    width: 40%;
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+  .images img:hover{
+    transform: scale(1.8);
+  }
+  .services h1{
+    align-items: center;
+    justify-content: center;
+    padding-left: 120px;
+  }
+.services p{
+  font-size: x-large;
+}
+  .service-container {
+    display: grid;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  .webapplication, .webdevolopment {
+    width: 80%;
+    margin-left: 20px;
+    padding: 20px;
+    margin-top: 30px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .webapplication img{
+    width: 120px;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    padding-left: 90px;
+  }
+  .webdevolopment img{
+    width: 120px;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    padding-left: 90px;
   }
 }
