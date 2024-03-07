@@ -200,7 +200,6 @@ button:active {
   .container {
     display: grid;
     align-items: center;
-    overflow: hidden;
   }
   
   .image {
@@ -233,10 +232,13 @@ button:active {
     padding-left: 5px;
     padding-right: 5px;
     text-align: justify;
+    white-space:nowrap;
   }
   
   .info-item {
     display: flex;
+    align-items: flex-start;
+    gap: 10px;
   }
   
   .info-item span:first-child {
