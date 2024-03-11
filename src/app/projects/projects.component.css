@@ -1,0 +1,97 @@
+.projects{
+    margin-top: 40px;
+    margin-left: 20px;
+}
+.services h1{
+    align-items: center;
+    justify-content: center;
+    padding-left: 700px;
+  }
+  
+  .service-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: auto;
+    justify-content: space-around;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+  .Health, .webdevolopment ,.webapplication,.Ecommerce{
+    width: 50%;
+    padding: 20px;
+    margin-top: 30px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+  }
+  .Health:hover{
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+  }
+  .webdevolopment:hover{
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+  }
+  .webapplication:hover{
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+  }
+  .Ecommerce:hover{
+    transition: transform 0.3s ease;
+    transform: scale(1.1);
+  }
+  .Health img{
+    width: 100%;
+    height: 300px;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0px;
+    border-radius: 5px;
+  }
+  .webdevolopment img{
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0px;
+    border-radius: 5px;
+  }
+  .webapplication img{
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0px;
+    border-radius: 5px;
+  }
+  .Ecommerce img{
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0px;
+    border-radius: 5px;
+  }
+  @media only screen and (max-width: 767px) {
+    .service-container {
+      flex-direction: column; /* Display items in a column */
+      align-items: center; /* Center-align items */
+  }
+  .services h1{
+    padding-left: 50px;
+  }
+  .Health img , .webdevolopment img, .webapplication img ,.Ecommerce img{
+    width: 100%;
+    height: auto;
+  }
+  .Health, .webdevolopment ,.webapplication,.Ecommerce{
+    width: 100%;
+    padding: 20px;
+    margin-top: 30px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+  }
+  }

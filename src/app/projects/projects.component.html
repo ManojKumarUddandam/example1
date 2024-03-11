@@ -1,8 +1,41 @@
 <app-header></app-header>
-<div class="products">
-    <div class="product" *ngFor="let p of projects">
-        <a routerLink="/project/{{p.id}}" target="_blank">{{p.title}}</a>
-    </div>
-
+<div class="projects" responsive>
+    <div class="services">
+        <h1>Projects</h1>
+        <div class="service-container">
+        <div class="Health">
+          <img src="assets/Health.jpg" alt="backend">
+          <h2>Project-1</h2>
+          <p>
+            Gesture-Based Health Monitoring System using Iot
+          </p>
+          <button (click)="openAdditionalInfo('health')">Read More</button>
+        </div>
+        <div class="webdevolopment">
+          <img src="assets/webdev.jpg" alt="webdev">
+          <h2>web-devolopment</h2>
+          <p>
+             Portfolio
+          </p>
+          <button (click)="openAdditionalInfo('webdev')">Read More</button>
+        </div>
+        <div class="webapplication">
+          <img src="assets/project1.png" alt="webapp">
+          <h2>web-application</h2>
+          <p>
+             Online-Bookstore
+          </p>
+          <button (click)="openAdditionalInfo('webapp')">Read More</button>
+        </div>
+        <div class="Ecommerce">
+          <img src="assets/ecommerce.jpg" alt="Ecommerce">
+          <h2>E-commerce</h2>
+          <p>
+             shopping
+          </p>
+          <button (click)="openAdditionalInfo('ecommerce')">Read More</button>
+        </div>
+       </div>
+  </div>
 </div>
 <app-foot></app-foot>

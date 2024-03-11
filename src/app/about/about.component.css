@@ -175,6 +175,8 @@ button:active {
     justify-content: center;
     border-radius: 30px;
     padding-left: 0px;
+    padding-right: 25px;
+    margin-right: 20px;
   }
   .about h2{
     font-size: x-large;
@@ -200,6 +202,7 @@ button:active {
   .container {
     display: grid;
     align-items: center;
+    overflow: visible;
   }
   
   .image {
@@ -219,7 +222,7 @@ button:active {
     margin-left:10px; /* Add margin to the right side of the text */
     margin-right:10px;
     padding-left: 8px;
-    padding-right: 8px;
+    padding-right: 10px;
     text-align: justify;
     font-size: x-large;
     font-weight: 100;
@@ -287,7 +290,7 @@ button:active {
   }
   .webapplication, .webdevolopment {
     width: 80%;
-    margin-left: 20px;
+    margin-left: 30px;
     margin-bottom: 70px;
     padding: 20px;
     margin-top: 30px;
