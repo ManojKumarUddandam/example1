@@ -1,6 +1,17 @@
-footer
-{
-    text-align: center;
+.footer body dark-mode{
     background-color: black;
-    color: white;
+    color:white;
+}
+footer {
+    background-color:white;
+    color: black;
+    text-align: center;
+    padding: 0.2px;
+}
+
+/* Adjustments for smaller screens */
+@media only screen and (max-width: 768px) {
+    footer {
+        font-size: 14px;
+    }
 }

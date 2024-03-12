@@ -9,13 +9,12 @@ import { FootComponent } from './foot/foot.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { NotfoundComponent } from './notfound/notfound.component';
-import { ProjectComponent } from './project/project.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ResponsiveService } from './ResponsiveService';
 import { DarkModeComponent } from './dark-mode/dark-mode.component';
 import { ResponsiveDirective } from './directives/responsive.directive';
-
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +24,6 @@ import { ResponsiveDirective } from './directives/responsive.directive';
     HeaderComponent,
     HomeComponent,
     NotfoundComponent,
-    ProjectComponent,
     ProjectsComponent,
     DarkModeComponent,
     ResponsiveDirective,
@@ -33,12 +31,17 @@ import { ResponsiveDirective } from './directives/responsive.directive';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [ResponsiveService],
+  providers: [ResponsiveService,
+   
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  
+}

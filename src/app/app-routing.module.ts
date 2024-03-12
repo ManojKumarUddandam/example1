@@ -5,7 +5,7 @@ import { AboutComponent } from './about/about.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
 import { NotfoundComponent } from './notfound/notfound.component';
-import { ProjectComponent } from './project/project.component';
+
 
 const routes: Routes = [{ path: '',  redirectTo: '/home', pathMatch: 'full'},
 {
@@ -15,7 +15,6 @@ const routes: Routes = [{ path: '',  redirectTo: '/home', pathMatch: 'full'},
 { path: 'about', component: AboutComponent },
 { path: 'projects', component: ProjectsComponent },
 { path: 'contact', component: ContactComponent },
-{ path:'project-Info/:type',component:ProjectComponent},
 { path: '**', component: NotfoundComponent },
 ];
 
