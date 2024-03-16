@@ -15,6 +15,9 @@ import { ResponsiveService } from './ResponsiveService';
 import { DarkModeComponent } from './dark-mode/dark-mode.component';
 import { ResponsiveDirective } from './directives/responsive.directive';
 import { FormsModule } from '@angular/forms';
+import { AngularFireModule } from '@angular/fire/compat';
+import { firebaseConfig } from './environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +38,8 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    AngularFireModule,
+    AngularFireModule.initializeApp(firebaseConfig),
   ],
   providers: [ResponsiveService,
    
